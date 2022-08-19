@@ -18,7 +18,7 @@ exec >/dev/null 2>&1
 
 {
     rm -f "$TMP_DIR"/*_scrot*.* &
-
+    alias magick=$(which convert)
     # Add 210ms delay to trick compositor fade animation.
     sleep .21s
 
@@ -27,7 +27,6 @@ exec >/dev/null 2>&1
     scrot ${ARGS} -b \
                   -e "mv -f \$f \"${TMP_DIR}/\"" \
                   -f \
-                  -i \
                   -l style=dash,width=3,color=#2be491 \
                   -s \
                   -z \
